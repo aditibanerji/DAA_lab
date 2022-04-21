@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+int z=0;
  
 int BinarySearch(int *a , int l , int r, int key)
 {
@@ -9,7 +10,7 @@ int BinarySearch(int *a , int l , int r, int key)
         return 0;
     }
     int mid = l +(r-l)/2;
-
+    z++;
     if(a[mid]==key)
     {
        
@@ -49,12 +50,12 @@ int main()
         res= BinarySearch(a,l,r,key);
         if(res!=0)
         {
-            cout<<"Present "<<endl;
+            cout<<"Present "<<z<<endl;
             
         }
         else
         {
-            cout<<"Not Present"<<endl;
+            cout<<"Not Present "<<s/2<<endl;
            
         }
 
