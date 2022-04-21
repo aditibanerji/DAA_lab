@@ -1,16 +1,7 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 int comp=0;
-void mergesort(int a[],int l,int r)
-{
-    if(l<r)
-    {
-        comp++;
-        int m= l+ (r-l)/2;
-        mergesort(a,l,m);
-        mergesort(a,m+1,r);
-        merge(a,l,m,r);
-    }
-}
+
 void merge(int a[],int l,int m,int r)
 {
     int n1=m-l+1;
@@ -32,9 +23,10 @@ void merge(int a[],int l,int m,int r)
     while(i<n1 && j<n2)
     {
 
+       comp++;
         if(L[i]<=R[j])
         {
-            comp++;
+            
             a[k]=L[i];
             i++;
         }
@@ -57,32 +49,43 @@ void merge(int a[],int l,int m,int r)
         a[k++]=R[j++];
     }
 }
+void mergesort(int a[],int l,int r)
+{
+    if(l<r)
+    {
+        
+        int m= l+ (r-l)/2;
+        mergesort(a,l,m);
+        mergesort(a,m+1,r);
+        merge(a,l,m,r);
+    }
+}
 int main()
 {
     int t,n;
 
 
-    printf("enter number of test cases\n");
-    scanf("%d",&t);
+    cout<<"enter number of test cases"<<endl;
+    cin>>t;
 
     while(t>0)
     {
-        printf("\nenter number of elements in array\n");
-        scanf("%d",&n);
+        cout<<"\nenter number of elements in array"<<endl;
+        cin>>n;
         int a[n];
-        printf("enter %d elements in array\n",n);
+       cout<<"enter "<<n<<" elements in array"<<endl;
         for(int i=0;i<n;i++)
         {
-            scanf("%d",&a[i]);
+            cin>>a[i];
         }
         int l=0,r=n-1;
         mergesort(a,0,n-1);
-        printf("inversion : \n");
+        cout<<"inversion :"<<endl;
         for(int i=0;i<n;i++)
         {
-            printf("%d ",a[i]);
+           cout<<a[i]<<" ";
         }
-        printf("\ncomparison = %d",comp);
+        cout<<"\ncomparison = "<<comp<<endl;
  t--;
     }
 
