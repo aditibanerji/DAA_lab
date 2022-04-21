@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
    int n,s,key;
-   int count=0,pr=1;
+   int count=0;
   
 
    cout<<"Enter the Number of test case"<<endl;
@@ -24,26 +24,21 @@ int main()
        }
        cout<<"enter key value to be searched"<<endl;
        cin>>key;
-      
-      for(int k=0 ; k<s ;k++)
+      int k;
+      for( k=0 ; k<s ;k++)
       {
          
          if(arr[k]==key)
          {
-            count++;
-             pr=0;
-            cout<<"Present "<<count/2<<endl;
+           
+             
+            cout<<"Present "<<k+1<<endl;
             break;
          }
-         else
-         {
-           
-            count++;
-         }
       }
-      if(pr==1)
+      if(k==s)
       {
-         cout<<"Not present "<<count/2<<endl;
+         cout<<"Not present "<<k<<endl;
       }
 
    }
