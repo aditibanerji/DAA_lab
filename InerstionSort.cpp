@@ -1,10 +1,12 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 void insertion_sort(int a[],int n)
 {
    int t ,shift=0,comp=0;
 
    for(int i=1;i<n;i++)
    {
+      
       t=a[i];
       int j=i-1;
 
@@ -22,31 +24,30 @@ void insertion_sort(int a[],int n)
 
    for(int i=0;i<n;i++)
    {
-      printf("%d ",a[i]);
+      cout<<a[i]<<" ";
    }
-   printf("\nshifts = %d",shift);
-printf("\ncomparison = %d",comp);
+  cout<<"\nshifts = "<<shift<<endl;
+   cout<<"comparison = "<<comp<<endl;
 
 }
 int main()
 {
-
-         
          int n;
          int t;
 
-         printf("enter number of test cases\n");
-         scanf("%d",&t);
+         cout<<"enter number of test cases"<<endl;
+         cin>>t;
 
          while(t>0)
          {
 
-         printf("\nenter number of elements\n");
-         scanf("%d",&n);
+        cout<<"\nenter number of elements"<<endl;
+        cin>>n;
          int a[n];
+         cout<<"enter "<<n<<" number of elements"<<endl;
          for(int i=0;i<n;i++)
          {
-             scanf("%d",&a[i]);
+            cin>>a[i];
          }
          insertion_sort(a,n);
 
