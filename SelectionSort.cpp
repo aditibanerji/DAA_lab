@@ -9,11 +9,13 @@ void selection_sort(int a[],int n)
   {
      pos=i;
      min=a[i];
+     swap++;
      for(int j=i+1;j<n;j++)
      {
+       comp++;
             if(a[j]<min)
             {
-              comp++;
+              
                min=a[j];
                pos=j;
             }
@@ -45,9 +47,9 @@ int main()
          int t;
 
         cout<<"enter number of test cases"<<endl;
-        cin>>n;
+        cin>>t;
 
-         while(t>0)
+         while(t--)
          {
 
          cout<<"\nenter number of elements"<<endl;
@@ -61,7 +63,7 @@ int main()
        
          selection_sort(a,n);
 
-         t--;
+         
          }
          return 0;
 }
