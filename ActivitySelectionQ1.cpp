@@ -2,9 +2,13 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
+bool mycmp(const pair<int,int>&a , const pair<int,int>&b)
+{
+    return (a.second<b.second);
+}
 int maxActivities(vector<pair<int,int>>arr , int n)
 {
-    sort(arr.begin(), arr.end());
+    sort(arr.begin(), arr.end(),mycmp);
      int prev=0,res=1;
      vector<pair<int,int>>final;
      final.push_back(make_pair(arr[0].first,arr[0].second));
